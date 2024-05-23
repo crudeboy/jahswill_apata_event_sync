@@ -3,6 +3,7 @@ import axios, { AxiosInstance } from 'axios';
 import environment from "../../../config/environment";
 import Activity from "../models/entities/Activity";
 import User from "../models/entities/User";
+import { onError, onSuccess } from "../../../shared/utils/logger";
 
 
 export class NftEventsService {
@@ -11,17 +12,7 @@ export class NftEventsService {
         baseURL: environment.reserviourApiUrl
       });
     
-    constructor(){
-        // this.api.interceptors.request.use(this.logger);
-        // this.api.interceptors.response.use(onSuccess, onError);
-    }
-
-
-    //create a method that calls the APi with the correct filter 
-    //parameters
-    //expose this via controller to call
-    //use a cron-job to call the data intermittently to ensure there's 
-    //no missed new information
+    constructor(){}
 
 
     public async fetchLatestEvents(limit: number, startTimestamp: number, endTimestamp: number, continuation?: string){
